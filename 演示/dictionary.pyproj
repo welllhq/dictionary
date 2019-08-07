@@ -5,7 +5,8 @@
     <ProjectGuid>2e8ed14c-4d16-45a7-9b8e-cdf7df317444</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>dictionary.py</StartupFile>
-    <SearchPath>演示</SearchPath>
+    <SearchPath>
+    </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>dictionary</Name>
