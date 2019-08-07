@@ -1,8 +1,7 @@
 import urllib.request
 import urllib.error
 from bs4 import BeautifulSoup
-import re
-
+import easygui
 #作为模块
 def dictionary(target):
     #模拟谷歌访问url
@@ -23,9 +22,10 @@ def dictionary(target):
     #根据解析内容返回翻译
     return f_res
 
-#若单独运行
+#单独运行,若作为模块则注释此处
 if __name__ == '__main__':
-   target = input("输入要查询的单词\n")
-   print(dictionary(target))
+   while True:
+        target = easygui.enterbox(msg="输入要查询的单词",title = '词典')
+        easygui.msgbox(msg = dictionary(target),title = '结果',ok_button='确定')
 
     
