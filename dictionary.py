@@ -22,7 +22,7 @@ def dictionary(target):
     #根据解析内容返回翻译
     return f_res
 
-#单独运行,若作为模块则注释此处
+##单独运行,若作为模块则注释此处
 if __name__ == '__main__':
    while True:
         target = easygui.enterbox(msg="输入要查询的单词",title = '词典')
