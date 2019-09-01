@@ -2,6 +2,8 @@ import urllib.request
 import urllib.error
 from bs4 import BeautifulSoup
 import easygui
+import sys
+
 #作为模块
 def dictionary(target):
     #模拟谷歌访问url
@@ -14,18 +16,27 @@ def dictionary(target):
 
     #使用beautifulsoup 解析html
     soup = BeautifulSoup(html,'lxml')
+    res=[]
     res = soup.select('ul>.clearfix>p>span')
+
     #去标签
     f_res=[]
-    for i in res:
-        f_res.append(i.text)
+    if res:
+        for i in res:
+            f_res.append(i.text)
+    else:
+            f_res=['无结果，请检查拼写']
+            f_res="".join(f_res)
     #根据解析内容返回翻译
     return f_res
 
 ##单独运行,若作为模块则注释此处
 if __name__ == '__main__':
+   easygui.msgbox(msg = '注意，本程序必须联网运行',title = 
+                  'created ------by Wells',ok_button ='确定')
    while True:
-        target = easygui.enterbox(msg="输入要查询的单词",title = '词典')
+        target = easygui.enterbox(msg="输入要查询的单词",title = '词典 ------- created by Wells')
         easygui.msgbox(msg = dictionary(target),title = '结果',ok_button='确定')
+   
 
     
